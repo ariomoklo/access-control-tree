@@ -15,20 +15,20 @@ The concept of this library is structuring your application as a tree. Defining 
 ``` ts
 // this is the base usage
 const access = createAccessControl(
-	{
-		todo: {
-			view: 'Enable user to view todo list page',
-			toggle: 'Enable user to toggle todo value',
-			crud: {
-				edit: 'Enable user to edit todo item',
-				create: 'Enable user to add todo item',
-				delete: 'Enable user to delete todo item'
-			}
-		},
-		extra: {
-			sayHi: 'Enable user to say hi'
-		}
-	}
+  {
+    todo: {
+      view: 'Enable user to view todo list page',
+      toggle: 'Enable user to toggle todo value',
+      crud: {
+        edit: 'Enable user to edit todo item',
+        create: 'Enable user to add todo item',
+        delete: 'Enable user to delete todo item'
+      }
+    },
+    extra: {
+      sayHi: 'Enable user to say hi'
+    }
+  }
 );
 ```
 
