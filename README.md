@@ -32,6 +32,40 @@ const access = createAccessControl(
 );
 ```
 
+#### `createAccessControl`
+
+``` ts
+interface Access = { [K: string]: Access | string }
+type AccessControlOptions = {
+	/** 
+     * add prefix to scope. default to '' (none) 
+     * example prefix: 'com.example'
+     * scope 'todo.view' => 'com.example.todo.view'
+     * */
+	prefix: string
+
+	/** string to use for spacer for scope. default to '.' */
+	spacer: string
+
+	/** default string scopes to be enabled. default to [] */
+	default: string[]
+}
+
+function createAccessControl<T extends Access> (access: T, Partial<AccessControlOptions>): {
+    grant: (...scopes: string[]) => void
+    reset: () => void
+    export: (enabledOnly: boolean) => ({ scope: string, desc: string })[]
+    has: (scope: string) => boolean
+    get: (scope: string) => AccessNode | undefined
+    search: (substring: string) => AccessNode[]
+    getChild: (scope: string) => AccessNode[]
+    readonly enabled: accessNode[]
+    readonly disabled: accessNode[]
+    readonly nodes: AccessNodes<T, AccessNode>
+    readonly can: AccessNodes<T, AccessNode>
+}
+```
+
 ### Asserting and Granting access
 
 To assert granted access you can use `can` property. `can` property will be typed as the type of access object from `createAccessControl` function with the leaf node will be typed boolean. With the example from before, variable `access` will have property of `can.todo.view` with typeof boolean.
@@ -63,6 +97,6 @@ access.grant('todo.view', 'todo.toggle', 'todo.crud.edit')
 // grant access by toggle function
 access.nodes.todo.view.toggle()
 
-// reseting access
+// reseting access to default
 access.reset()
 ```
