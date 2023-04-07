@@ -15,20 +15,20 @@ The concept of this library is structuring your application as a tree. Defining 
 ``` ts
 // this is the base usage
 const access = createAccessControl(
-  {
-    todo: {
-      view: 'Enable user to view todo list page',
-      toggle: 'Enable user to toggle todo value',
-      crud: {
-        edit: 'Enable user to edit todo item',
-        create: 'Enable user to add todo item',
-        delete: 'Enable user to delete todo item'
-      }
-    },
-    extra: {
-      sayHi: 'Enable user to say hi'
+    {
+        todo: {
+            view: 'Enable user to view todo list page',
+            toggle: 'Enable user to toggle todo value',
+            crud: {
+                edit: 'Enable user to edit todo item',
+                create: 'Enable user to add todo item',
+                delete: 'Enable user to delete todo item'
+            }
+        },
+        extra: {
+            sayHi: 'Enable user to say hi'
+        }
     }
-  }
 );
 ```
 
@@ -37,18 +37,18 @@ const access = createAccessControl(
 ``` ts
 interface Access = { [K: string]: Access | string }
 type AccessControlOptions = {
-	/** 
+    /** 
      * add prefix to scope. default to '' (none) 
      * example prefix: 'com.example'
      * scope 'todo.view' => 'com.example.todo.view'
      * */
-	prefix: string
-
-	/** string to use for spacer for scope. default to '.' */
-	spacer: string
-
-	/** default string scopes to be enabled. default to [] */
-	default: string[]
+    prefix: string
+    
+    /** string to use for spacer for scope. default to '.' */
+    spacer: string
+    
+    /** default string scopes to be enabled. default to [] */
+    default: string[]
 }
 
 function createAccessControl<T extends Access> (access: T, Partial<AccessControlOptions>): {
