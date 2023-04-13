@@ -64,10 +64,10 @@ describe('Access Control Tree Utility Test', () => {
 		expect(access.can.todo.view).toBeTruthy();
 	});
 	test('export all utility', () => {
-		expect(access.export(false).length).toBe(6);
+		expect(access.export().length).toBe(6);
 	});
 	test('export enabled only', () => {
-		expect(access.export().length).toBe(1);
+		expect(access.export({ enabledOnly: true }).length).toBe(1);
 	});
 	test('has utility', () => {
 		expect(access.has('com.example.todo.crud.edit')).toBeTruthy();
