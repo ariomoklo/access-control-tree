@@ -2,6 +2,8 @@
 
 Authorizing access to your app with ease.
 
+> Check demo on: [https://ariomoklo.github.io/access-control-tree/](https://ariomoklo.github.io/access-control-tree/)
+
 ## Get Started
 
 ```
@@ -18,8 +20,8 @@ const access = createAccessControl(
     {
         todo: {
             view: 'Enable user to view todo list page',
-            toggle: 'Enable user to toggle todo value',
-            crud: {
+            action: {
+                toggle: 'Enable user to toggle todo value',
                 edit: 'Enable user to edit todo item',
                 create: 'Enable user to add todo item',
                 delete: 'Enable user to delete todo item'
@@ -62,7 +64,7 @@ function createAccessControl<T extends Access> (access: T, Partial<AccessControl
     readonly enabled: accessNode[]
     readonly disabled: accessNode[]
     readonly nodes: AccessNodes<T, AccessNode>
-    readonly can: AccessNodes<T, AccessNode>
+    readonly can: AccessNodes<T, boolean>
 }
 ```
 

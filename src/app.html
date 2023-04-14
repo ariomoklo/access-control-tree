@@ -5,8 +5,14 @@
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
+
+		<link href="https://unpkg.com/fylgja/fylgja.css" rel="stylesheet">
 	</head>
 	<body>
-		<div>%sveltekit.body%</div>
+		<div class="min-h-screen">%sveltekit.body%</div>
+		<footer class="text-center">
+			<hr>
+			<p>Made with <a href="https://kit.svelte.dev/" style="color: hsl(15, 100%, 55%); font-weight: bold;">SvelteKit</a> & <a href="https://fylgja.dev/" style="color: purple; font-weight: bold;">Fylgja</a></p>
+		</footer>
 	</body>
 </html>
