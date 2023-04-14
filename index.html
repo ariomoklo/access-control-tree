@@ -2,18 +2,18 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" href="./access-control-tree/favicon.png" />
+		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="content-security-policy" content="">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/start.14dc2f10.js">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/chunks/index.8d0acb4b.js">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/chunks/singletons.22fbc932.js">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/chunks/index.e85ee7f0.js">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/app.5bb78c21.js">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/layout.svelte.1f0cf1c9.js">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/_layout.ts.984db11e.js">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/chunks/_layout.da46b06b.js">
-		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/_page.svelte.5fe678a1.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.76cfaaa4.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.8d0acb4b.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.fa3f6bbb.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.e85ee7f0.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.7eb04c59.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/layout.svelte.1f0cf1c9.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_layout.ts.984db11e.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/_page.svelte.5fe678a1.js">
 
 		<link href="https://unpkg.com/fylgja/fylgja.css" rel="stylesheet">
 	</head>
@@ -82,20 +82,19 @@
 			
 			<script>
 				{
-					__sveltekit_mjtl7h = {
+					__sveltekit_1qebufl = {
 						env: {},
-						assets: "/access-control-tree",
-						base: new URL("./access-control-tree", location).pathname,
+						base: new URL(".", location).pathname.slice(0, -1),
 						element: document.currentScript.parentElement
 					};
 
 					const data = [null,null];
 
 					Promise.all([
-						import("./access-control-tree/_app/immutable/entry/start.14dc2f10.js"),
-						import("./access-control-tree/_app/immutable/entry/app.5bb78c21.js")
+						import("./_app/immutable/entry/start.76cfaaa4.js"),
+						import("./_app/immutable/entry/app.7eb04c59.js")
 					]).then(([kit, app]) => {
-						kit.start(app, __sveltekit_mjtl7h.element, {
+						kit.start(app, __sveltekit_1qebufl.element, {
 							node_ids: [0, 2],
 							data,
 							form: null,
