@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./access-control-tree/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/start.14dc2f10.js">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/chunks/index.8d0acb4b.js">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/chunks/singletons.22fbc932.js">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/chunks/index.e85ee7f0.js">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/app.5bb78c21.js">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/layout.svelte.1f0cf1c9.js">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/_layout.ts.984db11e.js">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/chunks/_layout.da46b06b.js">
+		<link rel="modulepreload" href="./access-control-tree/_app/immutable/entry/_page.svelte.5fe678a1.js">
+
+		<link href="https://unpkg.com/fylgja/fylgja.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="min-h-screen">
+
+
+<main class="container p-4"><h1>Access Control Tree Demo</h1>
+    <hr>
+
+    <div class="flex" style="gap: 1rem;"><div class="card card-content" style="max-width: 75ch;"><p>JSON data bellow is an access control tree configured for todo app bellow. Based on the object tree, <code>access-control-tree</code> will generate 6 access scope that you can saved on databases and grant to user for determining access to authenticated user.</p>
+            <p>visit our <a href="https://github.com/ariomoklo/access-control-tree" style="background-color: black; color: white; padding: 4px 6px; border-radius: 6px;">github repo</a> for documentation on how to get started.</p>
+            <pre>{
+  "todo": {
+    "view": "Enable user to view todo list page",
+    "action": {
+      "toggle": "Enable user to toggle todo value",
+      "edit": "Enable user to edit todo item",
+      "create": "Enable user to add todo item",
+      "delete": "Enable user to delete todo item"
+    }
+  },
+  "extra": {
+    "sayHi": "Enable user to say hi"
+  }
+}</pre></div>
+        <div class="card card-content w-50"><p>Try granting access scope bellow to see the action...</p>
+            <div class="flex" style="gap: 1rem;"><select ><option disabled selected value>Pick an access scope
+                    </option><option value="todo.action.toggle">todo.action.toggle</option><option value="todo.action.edit">todo.action.edit</option><option value="todo.action.create">todo.action.create</option><option value="todo.action.delete">todo.action.delete</option><option value="extra.sayHi">extra.sayHi</option></select>
+                <button class="btn -theme w-50" >Add Scope</button></div>
+            <hr>
+            <ul class="list-style -none w-full"><li class="inline-flex justify-between items-center w-full" style="background-color: lightskyblue; padding: .25rem .5rem; margin-bottom: .25rem;"><span>todo.view</span>
+                        <button style="grow: 0;">❌</button>
+                    </li></ul></div></div>
+
+    <div class="card card-content mt-4"><h3 class="inline-flex justify-between items-center mb-0"><span>Todo App</span>
+        </h3>
+    <hr>
+    <ul class="list-style -none w-full"><li class="inline-flex justify-between items-center w-full" style="background-color: lightskyblue; padding: .25rem .5rem; margin-bottom: .5rem; gap: 1rem;"><div class="flex" style="gap: .25rem;">
+
+        <span>Try adding `todo.action.delete` access scope...</span></div>
+    
+    <div class="flex" style="gap: .25rem;">
+
+        </div>
+</li><li class="inline-flex justify-between items-center w-full" style="background-color: lightskyblue; padding: .25rem .5rem; margin-bottom: .5rem; gap: 1rem;"><div class="flex" style="gap: .25rem;">
+
+        <span>Watch the trash button show on scope added...</span></div>
+    
+    <div class="flex" style="gap: .25rem;">
+
+        </div>
+</li><li class="inline-flex justify-between items-center w-full" style="background-color: lightskyblue; padding: .25rem .5rem; margin-bottom: .5rem; gap: 1rem;"><div class="flex" style="gap: .25rem;">
+
+        <span>Then add `todo.action.create` scope to grant create todo to user...</span></div>
+    
+    <div class="flex" style="gap: .25rem;">
+
+        </div>
+</li>
+        <p class="text-center mb-0 mt-3" style="color: lightslategray;">Sorry, you don&#39;t have access to add todo list</p></ul>
+</div>
+</main>
+
+
+			
+			<script>
+				{
+					__sveltekit_mjtl7h = {
+						env: {},
+						assets: "/access-control-tree",
+						base: new URL("./access-control-tree", location).pathname,
+						element: document.currentScript.parentElement
+					};
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./access-control-tree/_app/immutable/entry/start.14dc2f10.js"),
+						import("./access-control-tree/_app/immutable/entry/app.5bb78c21.js")
+					]).then(([kit, app]) => {
+						kit.start(app, __sveltekit_mjtl7h.element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+		<footer class="text-center">
+			<hr>
+			<p>Made with <a href="https://kit.svelte.dev/" style="color: hsl(15, 100%, 55%); font-weight: bold;">SvelteKit</a> & <a href="https://fylgja.dev/" style="color: purple; font-weight: bold;">Fylgja</a></p>
+		</footer>
+	</body>
+</html>
