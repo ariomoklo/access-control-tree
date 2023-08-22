@@ -2,7 +2,7 @@
 
 Authorizing access to your app with ease.
 
-> Check demo on: [https://ariomoklo.github.io/access-control-tree/](https://ariomoklo.github.io/access-control-tree/)
+> Check demo on: [https://ariomoklo.dev/access-control-tree/](https://ariomoklo.dev/access-control-tree/)
 
 ## Get Started
 
